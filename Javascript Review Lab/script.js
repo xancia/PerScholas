@@ -99,7 +99,7 @@ for (let i = 0 ; i <= 100 ; i++) {
         console.log(`I found a ${i}. Three is a crowd`)
     }
 }
-*/
+
 // D. Savings Account
 // let bankAccount = 0
 // for (let i = 0 ; i <= 10 ; i++) {
@@ -126,7 +126,7 @@ A. Yes
 3. What real-life thing could you model with an array? 
 A. A List
 
-*/
+
 
 // B. Easy Does It
 let quotes = ['Miyaangelo','MLK','Obama']
@@ -326,37 +326,286 @@ const printLongestWord = function(array) {
     }
     return longestString
 }
-let array1 = ['mark','cuong','daniel']
-let array3 = ['osu', 'msu', 'ncsu']
-let array2 = array1.map((string,index,array) => {
+// let array1 = ['mark','cuong','daniel']
+// let array3 = ['osu', 'msu', 'ncsu']
+// let array2 = array1.map((string,index,array) => {
 
-    return {name: string, student: array3[index]}
-})
+//     return {name: string, student: array3[index]}
+// })
 
-console.log(array2)
+// console.log(array2)
 
 console.log(printLongestWord(["PEANUTBUTTER", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
 
 
 // Objects
 // A. Make a user object
-
-
+let user = {
+    name: 'cuong',
+    email: 'test@test.com',
+    age: 17,
+    purchased: []
+}
 
 // B. Update the user
+user.email = 'new@test.com'
+user.age++
 
 // C. Adding keys and values
+user.location = 'home'
 
 // D. Shopaholic
-
+user.purchased.push('carbohydrates','peace of mind','merino jodhpurs')
+console.log(user.purchased[2])
 // E. Object-within-object
-
+user.friend = {
+    name: 'Grace',
+    age: 20,
+    location: 'boston',
+    purchased: []
+}
+console.log(user.friend.name)
+console.log(user.friend.location)
+user.friend.age = 55
+user.friend.purchased.push('The One Ring','A Latte')
+console.log(user.friend.purchased[1])
 // F. Loops
+for (let purchase of user.purchased) {
+    console.log(purchase)
+}
+for (let purchase of user.friend.purchased) {
+    console.log(purchase)
+}
+
 
 // G. Functions can operate on objects
+const updateUser = function() {
+    user.age++
+    user.name = user.name.toUpperCase()
+}
+updateUser()
 
+console.log(user)
 
+const oldAndLoud = function(person) {
+    person.age++
+    person.name = person.name.toUpperCase()
+}
+
+oldAndLoud(user)
+
+console.log(user)
 // Cat Combiner
+let cat1 = {
+    name: 'Nino',
+    breed: 'street cat',
+    age: 3
+}
+console.log(cat1.age)
+console.log(cat1.breed)
+
+let cat2 = {
+    name: 'Tom',
+    breed: 'black cat',
+    age: 80
+}
+
+const combineCats = (mama, papa) => {
+    let newCat = {}
+    newCat.name = mama.name + papa.name
+    newCat.age = 1
+    newCat.breed = mama.breed + '-' + papa.breed
+    return newCat
+}
+console.log(combineCats(cat1, cat2))
 
 
 // Cat brain bender
+
+
+console.log(combineCats(combineCats(combineCats(cat1,cat2),combineCats(cat1,cat2)),combineCats(combineCats(cat1,cat2),combineCats(cat1,cat2))))
+
+*/
+
+
+// Part 2: Javascript Reps
+//Easy Going
+for (let i = 1 ; i <= 20 ; i++) {
+    console.log(i)
+}
+
+//Get Even
+for (let i = 0 ; i <= 200 ; i+=2) {
+    console.log(i)
+}
+
+//FizzBuzz
+
+for (let i = 1 ; i <= 100 ; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        console.log('FizzBuzz')
+    } else if (i % 5 == 0) {
+        console.log('buzz')
+    } else if (i % 3 == 0) {
+        console.log('Fizz')
+    } else {
+        console.log(i)
+    }
+}
+
+// Wild Wild Life
+
+const wolfy = ["Wolfy", "wolf", 16, "Yukon Territory"]
+const sharky = ["Sharky", "shark", 20, "Left Coast"]
+const plantee = ["Plantee", "plant",  5000 , "Mordor"]
+const porgee = ["Porgee", "Porg", 186, "Ahch-To"]
+const dart = ["D'Art" , "Demogorgan Dog", 2, "Upside Down"]
+
+plantee[2]++
+wolfy[3] = 'Gotham City'
+dart.push('Hawkins')
+wolfy.shift()
+wolfy.unshift('Gameboy') // wolfy[0] = 'Gameboy'
+
+// Yell at the Ninja Turtles
+
+let ninjaTurtles = ['Donatello', 'Leonardo', 'Raphael', 'Michaelangelo']
+
+for (let turtle of ninjaTurtles) {
+    console.log(turtle.toUpperCase())
+}
+
+// Methods, Revisited
+
+const favMovies = ['Jaws', 'The Fellowship of the Ring', 'Howl\'s Moving Castle', 'Django Unchained', 'Cloud Atlas', 'The Usual Suspects', 'Toy Story', 'Conan the Barbarian', 'Titanic', 'Harry Potter', 'Fried Green Tomatoes', 'Volver', 'Oculus', 'Seven', 'Black Panther', 'Harry Potter', 'Imitation of Life', 'Snatch', 'Fast and Furious'];
+
+favMovies.forEach((movie,index) => {
+    if (movie == 'Titanic') {
+        console.log(index)
+    }
+}) 
+
+console.log(favMovies[8])
+
+favMovies.sort()
+
+console.log(favMovies)
+
+favMovies.pop()
+favMovies.push('Guardians of the Galaxy')
+favMovies.reverse()
+favMovies.shift()
+favMovies.unshift('The Godfather') // adds the godfather to index 0 of the array
+console.log(favMovies)
+favMovies.splice(favMovies.indexOf('Django Unchained') + 1 , 0, 'Avatar')
+console.log(favMovies)
+
+let newMovies = favMovies.slice(favMovies.length/2)
+console.log(newMovies)
+
+console.log(newMovies.indexOf('Volver'))
+
+// const doesn't mean we can't mutate the contents of the array, it just means we can't reassign the variable to something else
+
+
+// Where is Waldo
+
+const whereIsWaldo = [["Timmy", "Frank"], "Eggbert",
+                    ["Lucinda", "Jacc", "Neff", "Snoop"],
+                    ["Petunia", ["Baked Goods", "Waldo"]]];
+
+
+
+whereIsWaldo.splice(whereIsWaldo.indexOf('Eggbert'), 1)
+
+console.log(whereIsWaldo)
+
+whereIsWaldo[1][2] = 'No One'
+
+console.log(whereIsWaldo)
+
+console.log(whereIsWaldo[2][1][1])
+
+// Excited Kitten
+
+for (let i = 0 ; i < 20 ; i++) {
+    let quotes = ['...human...why you taking pictures of me?...','...the catnip made me do it...','...why does the red dot always get away...']
+    if (i % 2 == 0) {
+        console.log(quotes[Math.floor(Math.random() * quotes.length)])
+    }
+    else {console.log('Love me, pet me! HSSSSS!')}
+
+}
+
+// Find the Median
+
+const nums = [14,11,16,15,13,16,15,17,19,11,12,14,19,11,15,17,11,18,12,17,12,71,18,15,12];
+
+nums.sort()
+console.log(nums[Math.floor(nums.length/2)])
+
+// Extra
+// Return of the Closets
+
+const kristynsCloset = [
+    "left shoe",
+    "cowboy boots",
+    "right sock",
+    "Per Scholas hoodie",
+    "green pants",
+    "yellow knit hat",
+    "marshmallow peeps"
+  ];
+  
+  // Thom's closet is more complicated. Check out this nested data structure!!
+  const thomsCloset = [
+    [
+      // These are Thom's shirts
+      "grey button-up",
+      "dark grey button-up",
+      "light blue button-up",
+      "blue button-up",
+    ],[
+      // These are Thom's pants
+      "grey jeans",
+      "jeans",
+      "PJs"
+    ],[
+      // Thom's accessories
+      "wool mittens",
+      "wool scarf",
+      "raybans"
+    ]
+  ];
+
+  let kristynsShoe = kristynsCloset[0]
+  kristynsCloset.shift()
+
+  thomsCloset[2].push(kristynsShoe)
+
+  console.log(thomsCloset)
+
+
+  const randomOutfit = (array) => {
+    let shirt = array[0][Math.floor(Math.random() * array[0].length)]
+    let pants = array[1][Math.floor(Math.random() * array[1].length)]
+    let acc = array[2][Math.floor(Math.random() * array[2].length)]
+    return `Thom is wearing a ${shirt} with ${pants} and ${acc}`
+  }
+
+  console.log(randomOutfit(thomsCloset))
+
+
+  // Dirty Laundry
+
+  kristynsCloset.forEach((clothes) => {
+    console.log(`WHIRR: Now washing ${clothes}`)
+  })
+
+  // Inventory
+
+  let thomShirts = thomsCloset[0]
+  let thomPants = thomsCloset[1]
+  let thomAcc = thomsCloset[2]
+
+  
