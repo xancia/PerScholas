@@ -36,8 +36,8 @@ const gameFunction = function (evt) {
 
   setTimeout(winCondition, 1);
 };
-// event listener
 
+// event listener
 container.addEventListener("click", gameFunction);
 
 // Print X or O function
