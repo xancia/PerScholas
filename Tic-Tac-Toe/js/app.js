@@ -90,7 +90,7 @@ const winCondition = (evt) => {
       oBox.textContent = `O winner = ${oCounter}`;
     }
   });
-  
+
   const filledBoxes = [...box].every((box) => box.textContent);
 
   if (filledBoxes && !winner) {

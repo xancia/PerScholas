@@ -1,110 +1,102 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: 'Exo', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Exo", sans-serif;
 }
 
-header{
-    
-    width: 600px;
-    height: 100px;
-    margin-bottom: 40px;
-    display: flex;
-
+header {
+  width: 600px;
+  height: 100px;
+  margin-bottom: 40px;
+  display: flex;
 }
 
-header> div{
-    border: 10px solid #324141;
-    border-style: ridge;
-    width: 300px;
-    height: 100px;  
-    text-align: center;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: radial-gradient(circle, #a9c5d8, rgba(190, 208, 216, 0.267));
-    font-weight: bold;
-    font-family: 'Exo', sans-serif;
+header > div {
+  border: 10px solid #324141;
+  border-style: ridge;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #a9c5d8, rgba(190, 208, 216, 0.267));
+  font-weight: bold;
+  font-family: "Exo", sans-serif;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    height: 600px;
-    width: 600px;
-    gap: 20px
-
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  height: 600px;
+  width: 600px;
+  gap: 20px;
 }
 
 .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(190, 208, 216, 0.267);
-    background-image: url(pngegg.png);
-    background-repeat: no-repeat;
-    background-size: contain, cover;
-    /* border: 1px double black; */
-    font-family: 'Exo', sans-serif;
-    font-size: 75px;
-    max-width: 200px;
-    height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(190, 208, 216, 0.267);
+  background-image: url(pngegg.png);
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  /* border: 1px double black; */
+  font-family: "Exo", sans-serif;
+  font-size: 75px;
+  max-width: 200px;
+  height: auto;
 }
 
 .reset {
-    margin-top: 20px;
-    background: radial-gradient(circle, #a9c5d8, rgba(190, 208, 216, 0.267));
-    font-family: 'Oswald', sans-serif;
-    /* border: none; */
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100px;
-    height: 30px;
+  margin-top: 20px;
+  background: radial-gradient(circle, #a9c5d8, rgba(190, 208, 216, 0.267));
+  font-family: "Oswald", sans-serif;
+  /* border: none; */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s;
+  width: 100px;
+  height: 30px;
 }
 
 .reset:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .reset:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .reset:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgb(114, 114, 114);
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(114, 114, 114);
 }
-
 
 .style-winner {
-    color: #192738;
-    font-weight: bold;
-    animation: winAnimation;
-    animation-duration: 3s;
-    animation-iteration-count: 2;
-    animation-fill-mode: forwards;
+  color: #192738;
+  font-weight: bold;
+  animation: winAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
 }
 
-
-
-@keyframes winAnimation{
-    0% {
+@keyframes winAnimation {
+  0% {
     color: black;
- }
-    50% {
+  }
+  50% {
     color: white;
- }
-    100% {
-    color: #192738; 
-    transform: rotateZ(360deg)
- }
+  }
+  100% {
+    color: #192738;
+    transform: rotateZ(360deg);
+  }
 }
 /* can change the color on line 80 to fit theme */
-
-
