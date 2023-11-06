@@ -4,6 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: 'Exo', sans-serif;
 }
 
 header{
@@ -27,7 +28,7 @@ header> div{
     align-items: center;
     background: radial-gradient(circle, #a9c5d8, rgba(190, 208, 216, 0.267));
     font-weight: bold;
-    font-family: serif;
+    font-family: 'Exo', sans-serif;
 }
 
 .container {
