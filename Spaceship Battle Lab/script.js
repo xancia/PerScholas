@@ -44,7 +44,6 @@ ourShip.hull += shipShield;
 ourShip.misslePower = 15;
 ourShip.missleCount = 5;
 
-
 //Enemy ship generation area
 const enemyShips = [];
 let enemyShipHull = Math.floor(Math.random() * (6 - 3) + 3);
@@ -74,20 +73,23 @@ const startGame = () => {
   retreatButton.addEventListener("click", retreat);
 };
 
-
 //Attack handles 90% of the battle logic and game function
 const attack = () => {
   missle.removeEventListener("click", missleFunction); // removes missle button functionality so the user doesn't press it accidentally
-  if (!enemySelected) { // if enemy hasn't been selected run the chooseEnemy function
+  if (!enemySelected) {
+    // if enemy hasn't been selected run the chooseEnemy function
     chooseEnemy();
   }
   // check remaining enemy ship
-  if (enemySelected) { // checks to see if an enemy has been selected before running the code
+  if (enemySelected) {
+    // checks to see if an enemy has been selected before running the code
     enemySelected = false; // resets enemySelected for next round
     userInput.removeEventListener("change", enemySelection); // remove user input to avoid unintended behavior
-    if (enemyShips[enemyShipNumber]) { // if enemy exists, proceed with attack
+    if (enemyShips[enemyShipNumber]) {
+      // if enemy exists, proceed with attack
       battleFormula(ourShip, enemyShips[enemyShipNumber]);
-      if (hitCheck) { // check for hit
+      if (hitCheck) {
+        // check for hit
         logText(
           `You did ${ourShip.firepower} damage to Enemy Ship number ${
             enemyShipNumber + 1
@@ -108,7 +110,7 @@ const attack = () => {
           );
 
           // check if we are still alive
-          if (ourShip.hull <= 0) { 
+          if (ourShip.hull <= 0) {
             logText("Your Ship Has Been Destroyed. Game Over.");
             attackButton.removeEventListener("click", attack);
             retreatButton.removeEventListener("click", retreat);
@@ -122,7 +124,7 @@ const attack = () => {
         enemyShips.splice(enemyShipNumber, 1); // remove enemy from array
 
         // check if there are any remaining enemies
-        if (enemyShips[0]) { 
+        if (enemyShips[0]) {
           logText(
             `There are ${enemyShips.length} enemies remaining. How to proceed? Please select to ontinue the Attack or Retreat.`
           );
