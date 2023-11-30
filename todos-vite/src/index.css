@@ -1,0 +1,12 @@
+.list-item {
+    display: flex;
+
+}
+
+.checkbox {
+    margin-right: 25px;
+}
+
+.list-item button {
+    margin-left: 10px;
+}
