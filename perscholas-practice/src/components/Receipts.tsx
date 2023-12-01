@@ -12,11 +12,12 @@ type ReceiptsProps = {
         };
         paid: boolean;
     };
-}
+    onClick: () => void; 
+};
 
-const Receipts: React.FC<ReceiptsProps> = ({ receipt }) => {
+const Receipts: React.FC<ReceiptsProps> = ({ receipt, onClick}) => {
   return (
-    <div className="w-60 h-96 border border-orange-500 m-5" >
+    <div className="w-60 h-96 border border-orange-500 m-5" onClick={onClick}>
         <div className="p-8">
             <h1 className="font-bold text-3xl">{receipt.person}</h1>
             <p className="font-bold py-1 pt-4"><span className="text-purple-800">Main:</span> {receipt.order.main}</p>
