@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar"
 
 const HomePage = () => {
   return (
-    <div className="w-80 h-auto mx-auto flex flex-col border border-black">
+    <div className="w-80 h-[500px] flex flex-col border border-black m-0">
         <Header />
         <SearchBar />
         <EmployeeList />

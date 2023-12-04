@@ -1,5 +1,6 @@
 // import Receipts from "./components/Receipts"
 // import { receipts } from './data'
+import FormSection from './components/employee-directory/FormSection'
 import HomePage from './components/employee-directory/HomePage'
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
     //   ))}
       
     // </div>
-    <div className='flex h-screen items-center'>
+    <div className='flex justify-center items-center h-screen'>
       <HomePage />
+      <FormSection />
     </div>
   )
 }
