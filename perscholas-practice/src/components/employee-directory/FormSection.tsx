@@ -1,6 +1,7 @@
 // FormSection.tsx
 import { useState } from "react"
 import { EmployeeType } from "./EmployeeListItem";
+import { randomImageGen } from "./util/util";
 
 type FormSectionProps = {
     addEmployee: (employee: EmployeeType) => void;
@@ -28,7 +29,7 @@ const FormSection = ({ addEmployee }: FormSectionProps) => {
         const newEmployee: EmployeeType = {
             ...form,
             id: Math.random(), 
-            avatar: '/images/headshot4.jpeg' 
+            avatar: randomImageGen()
         };
         addEmployee(newEmployee);
     }

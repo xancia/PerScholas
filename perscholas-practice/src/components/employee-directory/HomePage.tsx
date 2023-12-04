@@ -6,13 +6,15 @@ import { EmployeeType } from "./EmployeeListItem";
 
 type HomePageProps = {
     employee: EmployeeType[] | undefined;
+    input: string;
+    handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const HomePage = ({ employee }: HomePageProps) => {
+const HomePage = ({ employee, input, handleChange }: HomePageProps) => {
     return (
         <div className="w-80 h-[500px] flex flex-col border border-black m-0">
             <Header />
-            <SearchBar />
+            <SearchBar input={input} handleChange={handleChange}/>
             <EmployeeList employee={employee} />
         </div>
     )
