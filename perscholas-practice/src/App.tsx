@@ -1,7 +1,8 @@
 // import Receipts from "./components/Receipts"
 // import { receipts } from './data'
-import FormSection from './components/employee-directory/FormSection'
-import HomePage from './components/employee-directory/HomePage'
+
+import EmployeeDirectory from "./components/employee-directory/EmployeeDirectory"
+
 
 function App() {
   // const [receiptsState, setReceiptsState] = useState(receipts);
@@ -20,9 +21,8 @@ function App() {
     //   ))}
       
     // </div>
-    <div className='flex justify-center items-center h-screen'>
-      <HomePage />
-      <FormSection />
+    <div>
+      <EmployeeDirectory />
     </div>
   )
 }
