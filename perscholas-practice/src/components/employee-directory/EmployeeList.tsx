@@ -28,7 +28,7 @@ export const EmployeeList = () => {
 
   return (
     <div>
-      <div className="flex flex-col p-2 overflow-scroll employee-list max-h-96">
+      <div className="flex flex-col p-2 overflow-scroll employee-list max-h-[400px]">
         {employee &&
           employee.data.map((emp) => (
             <EmployeeListItem key={emp.id} data={emp} />
