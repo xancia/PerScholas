@@ -2,3 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.employee-list{
+-ms-overflow-style: none; /* IE and Edge */
+scrollbar-width: none; /* Firefox */
+}
+
+.employee-list::-webkit-scrollbar {
+display: none;
+}
