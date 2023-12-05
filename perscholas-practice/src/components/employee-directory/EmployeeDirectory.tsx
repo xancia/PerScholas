@@ -29,14 +29,6 @@ const EmployeeDirectory = () => {
        
     }
 
-    // function filterEmployee(value: string) {
-    //     const newEmployeeList = employee.filter(emp => 
-    //         emp.first_name.toLowerCase().includes(value.toLowerCase()) || 
-    //         emp.last_name.toLowerCase().includes(value.toLowerCase())
-    //     );
-    //     setFilteredEmployeeList(newEmployeeList);
-    // }
-
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
         setInput(e.target.value);
     }
