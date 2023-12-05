@@ -1,5 +1,5 @@
 // FormSection.tsx
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { EmployeeType } from "./EmployeeListItem";
 import { randomImageGen } from "./util/util";
 
@@ -8,6 +8,7 @@ type FormSectionProps = {
 };
 
 const FormSection = ({ addEmployee }: FormSectionProps) => {
+    const [isFormShowing, setIsFormShowing] = useState(false)
    
     type refType = HTMLInputElement | null
 
@@ -29,9 +30,14 @@ const FormSection = ({ addEmployee }: FormSectionProps) => {
     }
     }
 
+    function handleClick(){
+        setIsFormShowing(!isFormShowing)
+    }
 
     return (
         <div className="w-80 h-[500px] flex flex-col border border-black m-0 p-2">
+        <button onClick={handleClick} className="border-black border w-32 mx-auto">Add Employees</button>
+        {isFormShowing &&
             <form className="flex flex-col" onSubmit={handleSubmit}>
                 <label htmlFor="first_name">First Name: </label>
                 <input id="first_name" className="border border-black"  ref={firstNameRef} />
@@ -44,6 +50,7 @@ const FormSection = ({ addEmployee }: FormSectionProps) => {
 
                 <button className="border border-black mt-2">Submit</button>
             </form>
+        }
         </div>
     )
 }

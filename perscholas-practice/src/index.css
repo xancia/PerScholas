@@ -10,3 +10,4 @@ scrollbar-width: none; /* Firefox */
 .employee-list::-webkit-scrollbar {
 display: none;
 }
+

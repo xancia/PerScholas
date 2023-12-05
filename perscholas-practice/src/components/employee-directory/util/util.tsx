@@ -5,3 +5,11 @@ export const randomImageGen = () => {
   return randomImage
 }
 
+export function rgbRandomizer(){
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+
+  return {borderColor: `rgb(${red},${green}, ${blue})`}
+}
+
