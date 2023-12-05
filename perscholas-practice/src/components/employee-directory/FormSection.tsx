@@ -1,5 +1,5 @@
 // FormSection.tsx
-import { useState } from "react"
+import { useRef } from "react"
 import { EmployeeType } from "./EmployeeListItem";
 import { randomImageGen } from "./util/util";
 
@@ -8,53 +8,39 @@ type FormSectionProps = {
 };
 
 const FormSection = ({ addEmployee }: FormSectionProps) => {
-    type FormType = {
-        first_name: string;
-        last_name: string;
-        title: string;
-        phone: string;
-        email: string
-    }
+   
+    type refType = HTMLInputElement | null
 
-    const [form, setForm] = useState<FormType>({
-        first_name: '',
-        last_name: '',
-        title: '',
-        phone: '',
-        email: ''
-    });
+    const firstNameRef = useRef<refType>(null)
+    const lastNameRef = useRef<refType>(null)
+    const emailRef = useRef<refType>(null)
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
+        if (firstNameRef.current && lastNameRef.current && emailRef.current){
         const newEmployee: EmployeeType = {
-            ...form,
+            first_name: firstNameRef.current.value,
+            last_name: lastNameRef.current.value,
+            email:  emailRef.current.value,
             id: Math.random(), 
             avatar: randomImageGen()
         };
         addEmployee(newEmployee);
     }
-
-    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setForm({ ...form, [e.target.id]: e.target.value });
     }
+
 
     return (
         <div className="w-80 h-[500px] flex flex-col border border-black m-0 p-2">
             <form className="flex flex-col" onSubmit={handleSubmit}>
                 <label htmlFor="first_name">First Name: </label>
-                <input id="first_name" className="border border-black" type="text" value={form.first_name} onChange={handleChange} />
+                <input id="first_name" className="border border-black"  ref={firstNameRef} />
 
                 <label htmlFor="last_name">Last Name: </label>
-                <input id="last_name" className="border border-black" type="text" value={form.last_name} onChange={handleChange} />
-
-                <label htmlFor="title">Title: </label>
-                <input id="title" className="border border-black" type="text" value={form.title} onChange={handleChange} />
-
-                <label htmlFor="phone">Phone: </label>
-                <input id="phone" className="border border-black" type="text" value={form.phone} onChange={handleChange} />
+                <input id="last_name" className="border border-black"  ref={lastNameRef} />
 
                 <label htmlFor="email">Email: </label>
-                <input id="email" className="border border-black" type="text" value={form.email} onChange={handleChange} />
+                <input id="email" className="border border-black"  ref={emailRef} />
 
                 <button className="border border-black mt-2">Submit</button>
             </form>
