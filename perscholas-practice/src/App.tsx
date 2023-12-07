@@ -1,5 +1,6 @@
 // import ReceiptsLab from "./components/receipts-lab/ReceiptsLab"
-import EmployeeDirectory from "./components/employee-directory/EmployeeDirectory"
+import CryptoApp from "./components/crypto-router-app/CryptoApp"
+// import EmployeeDirectory from "./components/employee-directory/EmployeeDirectory"
 
 
 
@@ -10,7 +11,8 @@ function App() {
     
     <div>
       {/* <ReceiptsLab /> */}
-      <EmployeeDirectory />
+      {/* <EmployeeDirectory /> */}
+      <CryptoApp />
     </div>
   )
 }
