@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom'
 
 
 const Price = () => {
-  const apikey = "22A5F2F2-7D81-45A7-9A13-89C701D1FD65"
+  const apikey = import.meta.env.VITE_COINAPI_API_URL
   const { symbol } = useParams()
 
   const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apikey}`;
