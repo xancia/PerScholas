@@ -8,7 +8,7 @@ import { EmployeeType } from "./components/employee-directory/EmployeeListItem"
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [employee, setEmployee] = useState<EmployeeType[]>([]);
+  const [employee, setEmployee] = useState<EmployeeType[]>([]); // used for employee directory lab/hw
 
   return (
     
