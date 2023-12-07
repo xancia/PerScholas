@@ -1,7 +1,9 @@
 // EmployeeListItem.tsx
 import { useState, useEffect } from 'react';
 export type EmployeeType = {
-    id: number;
+    filter(arg0: (emp: { first_name: string; last_name: string; }) => boolean): unknown;
+    length: number;
+    id: number | string;
     avatar: string;
     email: string;
     first_name: string;

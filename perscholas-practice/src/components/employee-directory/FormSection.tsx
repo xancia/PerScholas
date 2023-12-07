@@ -3,11 +3,13 @@ import { useRef, useState } from "react"
 import { EmployeeType } from "./EmployeeListItem";
 import { randomImageGen } from "./util/util";
 
+
 type FormSectionProps = {
     addEmployee: (employee: EmployeeType) => void;
+    employee: EmployeeType
 };
 
-const FormSection = ({ addEmployee }: FormSectionProps) => {
+const FormSection = ({ addEmployee, employee }: FormSectionProps) => {
     const [isFormShowing, setIsFormShowing] = useState(false)
    
     type refType = HTMLInputElement | null
@@ -22,11 +24,16 @@ const FormSection = ({ addEmployee }: FormSectionProps) => {
         const newEmployee: EmployeeType = {
             first_name: firstNameRef.current.value,
             last_name: lastNameRef.current.value,
-            email:  emailRef.current.value,
-            id: Math.random(), 
-            avatar: randomImageGen()
+            email: emailRef.current.value,
+            id: crypto.randomUUID(),
+            avatar: randomImageGen(),
+            length: 0,
+            filter: function (): unknown {
+                throw new Error("Function not implemented.");
+            }
         };
         addEmployee(newEmployee);
+        console.log(employee)
     }
     }
 
