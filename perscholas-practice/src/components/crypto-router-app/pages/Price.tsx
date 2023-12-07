@@ -8,6 +8,15 @@ const Price = () => {
   const apikey = import.meta.env.VITE_COINAPI_API_URL
   const { symbol } = useParams()
 
+  /* useNavigate
+  import useNaviate
+  
+  const navigate = useNavigate()
+
+  <div onClick={() => navigate('/')}> this turns this element into a navigation link to the link provided
+
+  */
+
   const url = `https://rest.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apikey}`;
 
   const [coin, setCoin] = useState<any>(null)
