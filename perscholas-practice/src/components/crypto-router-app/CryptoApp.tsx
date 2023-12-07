@@ -1,7 +1,19 @@
+import Nav from "./components/Nav"
+import Currencies from "./pages/Currencies"
+import Main from "./pages/Main"
+import Price from "./pages/Price"
+import { Route, Routes } from 'react-router-dom'
 
 const CryptoApp = () => {
   return (
-    <div>CryptoApp</div>
+    <div>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/price" element={<Price />} />
+      </Routes>
+    </div>
   )
 }
 
