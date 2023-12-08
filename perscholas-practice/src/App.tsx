@@ -5,6 +5,8 @@ import EmployeeDirectory from "./components/employee-directory/EmployeeDirectory
 import EmployeePage from "./components/employee-directory/pages/EmployeePage"
 import {useState} from 'react'
 import { EmployeeType } from "./components/employee-directory/EmployeeListItem"
+import StockApp from "./components/stock-router-app/pages/StockApp"
+
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -19,6 +21,7 @@ function App() {
         <Route path="/employeedirectory" element={<EmployeeDirectory employee={employee} setEmployee={setEmployee}/>}/>
         <Route path="/employeedirectory/:id" element={<EmployeePage employee={employee}/>}/>
         <Route path="/cryptoapp/*" element={<CryptoApp />}/>
+        <Route path="/stockapp/*" element={<StockApp />}/>
       </Routes>
     </div>
   )
