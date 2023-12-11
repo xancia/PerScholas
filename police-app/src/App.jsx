@@ -21,26 +21,6 @@ function App() {
   }
 
 
-  function handleClick(location) {
-    switch(location){
-      case 'BROOKLYN':
-        setBorough(location)
-        break;
-      case 'MANHATTAN':
-        setBorough(location)
-        break;
-      case 'QUEENS':
-        setBorough(location)
-        break;
-      case 'BRONX':
-        setBorough(location)
-        break;
-      case 'STATEN ISLAND':
-        setBorough(location)
-        break;
-    }
-  }
-
   function handleChange(e){
     setInput(e.target.value)
   }
@@ -52,12 +32,12 @@ function App() {
     <div className="max-w-screen-lg flex flex-col items-center mx-auto">
       <h1 className="mt-5 font-bold text-4xl">WHERE CAN WE CAUSE TROUBLE TODAY?</h1>
       <div className="flex w-full justify-center gap-1 m-10">
-      <input className="border border-gray-300 p-1 rounded-md mr-1 py-2 w-40" onChange={handleChange} value={input} placeholder="# OF COMPLAINTS"/>
-      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => handleClick('BROOKLYN')}>Brooklyn</button>
-      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => handleClick('MANHATTAN')}>Manhattan</button>
-      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => handleClick('QUEENS')}>Queens</button>
-      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => handleClick('BRONX')}>Bronx</button>
-      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => handleClick('STATEN ISLAND')}>Staten Island</button>
+      <input className="border border-gray-300 p-1 rounded-md mr-1 py-2 w-40" type="number" onChange={handleChange} value={input} placeholder="# OF COMPLAINTS"/>
+      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('BROOKLYN')}>Brooklyn</button>
+      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('MANHATTAN')}>Manhattan</button>
+      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('QUEENS')}>Queens</button>
+      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('BRONX')}>Bronx</button>
+      <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('STATEN ISLAND')}>Staten Island</button>
       </div>
       {data &&
 
