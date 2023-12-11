@@ -20,7 +20,6 @@ function App() {
     setData(data)
   }
 
-  console.log(data)
 
   function handleClick(location) {
     switch(location){
