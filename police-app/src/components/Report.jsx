@@ -10,9 +10,11 @@ const Report = ({incident}) => {
     }
   return (
     <div>
-        <div key={incident.unique_key}>
-      <p>{incident.descriptor}</p>
-      <button onClick={handleToggle}>WHAT DID THE POLICE DO?</button>
+        <div key={incident.unique_key} className="flex flex-col items-center">
+        <div className="flex justify-between w-[700px] p-4">
+      <p className="font-bold">{incident.descriptor}</p>
+      <button className="rounded-md bg-red-500 text-white px-2" onClick={handleToggle}>WHAT DID THE POLICE DO?</button>
+      </div>
       {policeReport && <p>{incident.resolution_description}</p>}
       </div>
     </div>

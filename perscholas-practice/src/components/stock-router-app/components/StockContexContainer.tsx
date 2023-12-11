@@ -28,7 +28,7 @@ const StockContextContainer: React.FC<ContainerProps> = ({
       ]
 
     const sharedValue: any = {
-        stocks: stocks
+        stocks: stocks,
     }
 
 
