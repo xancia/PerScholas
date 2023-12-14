@@ -2,18 +2,32 @@ import "./App.css";
 import { useState, useReducer } from "react";
 import TodoList from "./components/TodoList";
 
+//react useReducer reducer function created in another file
 import reducer from './reducer'
 
-// let key = import.meta.env.VITE_KEY
+// Redux toolkit stuff
+import { useSelector } from "react-redux"; // Access state value
+import { useDispatch } from "react-redux"; // allows use of actions
+import { addTodo } from "./todoSlice"; // the action
+
 
 export default function App() {
 
-  let [todos, dispatch] = useReducer(reducer, []);
-  let [input, setInput] = useState("");
-  let [listType, setListType] = useState("all");
+  // Redux toolkit
+  const todosR = useSelector((state) => state.todosR)
+  const dispatchR = useDispatch()
+  console.log(todosR)
+
+  //react useReducer
+  const [todos, dispatch] = useReducer(reducer, []);
+
+  //rest of code
+  const [input, setInput] = useState("");
+  const [listType, setListType] = useState("all");
 
   function addToList() {
     dispatch({ type: 'ADD_TODO', payload: input })
+    dispatchR(addTodo(input))
     setInput("");
   }
 
