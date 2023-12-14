@@ -1,9 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import Report from "./components/Report"
+import { usePoliceContext } from "./components/util/ContextProvider"
 
 function App() {
-  const [data,setData] = useState(null)
+  
+  const { data , dispatch } = usePoliceContext()
+
+
   const [input, setInput] = useState(10)
   const [borough, setBorough] = useState('BROOKLYN')
   const appToken = import.meta.env.VITE_APP_TOKEN
@@ -17,7 +21,7 @@ function App() {
   async function getApiData() {
     const promise = await fetch(`https://data.cityofnewyork.us/resource/erm2-nwe9.json?agency=NYPD&borough=${borough}&$limit=100&$$app_token=${appToken}`)
     const data = await promise.json()
-    setData(data)
+    dispatch({type: 'SET_DATA' , payload: data})
   }
 
 
