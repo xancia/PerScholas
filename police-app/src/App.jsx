@@ -4,7 +4,7 @@ import Report from "./components/Report"
 import { usePoliceContext } from "./components/util/ContextProvider"
 
 function App() {
-  
+
   const { data , dispatch } = usePoliceContext()
 
 
@@ -25,18 +25,13 @@ function App() {
   }
 
 
-  function handleChange(e){
-    setInput(e.target.value)
-  }
-
-  
 
   return (
     <div className="bg-gray-200 w-screen min-h-screen">
     <div className="max-w-screen-lg flex flex-col items-center mx-auto">
       <h1 className="mt-5 font-bold text-4xl">WHERE CAN WE CAUSE TROUBLE TODAY?</h1>
       <div className="flex w-full justify-center gap-1 m-10">
-      <input className="border border-gray-300 p-1 rounded-md mr-1 py-2 w-40" type="number" onChange={handleChange} value={input} placeholder="# OF COMPLAINTS"/>
+      <input className="border border-gray-300 p-1 rounded-md mr-1 py-2 w-40" type="number" onChange={(e) => setInput(e.target.value)} value={input} placeholder="# OF COMPLAINTS"/>
       <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('BROOKLYN')}>Brooklyn</button>
       <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('MANHATTAN')}>Manhattan</button>
       <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('QUEENS')}>Queens</button>
