@@ -2,10 +2,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect } from 'react'
 import {useNavigate, useParams} from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
-const EmployeePage: any = ({employee}:any) => {
+const EmployeePage: any = () => {
     const navigate = useNavigate()
     const {id} = useParams()
+    const employee: any = useSelector((state:any) => state.employee)
 
     const [employeeElement] = employee.filter((emp: any) => emp.id == id)
 

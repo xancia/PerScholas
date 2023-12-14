@@ -5,21 +5,21 @@ import FormSection from './FormSection';
 import HomePage from './HomePage';
 import { EmployeeType } from "./EmployeeListItem";
 
-type empProps = {
-    setEmployee: any
-    employee: any
-};
+import { useSelector, useDispatch } from 'react-redux';
+import { setData } from './store/employeeSlice';
 
-const EmployeeDirectory = ({employee, setEmployee}: empProps) => {
+
+const EmployeeDirectory = () => {
     const [input, setInput] = useState('');
 
+    const employee = useSelector((state:any) => state.employee)
+    const dispatch = useDispatch()
 
     async function fetchData() {
         try {
             const response = await fetch("https://reqres.in/api/users?page=1");
             const data: { data: EmployeeType } = await response.json();
-            setEmployee(data.data);
-            console.log(employee)
+            dispatch(setData(data.data))
            
         } catch (error) {
             console.error(error);
@@ -27,14 +27,9 @@ const EmployeeDirectory = ({employee, setEmployee}: empProps) => {
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData()
     }, []);
 
-    function addEmployee(newEmployee: EmployeeType) {
-        const updatedEmployees = [...employee, newEmployee];
-        setEmployee(updatedEmployees);
-       
-    }
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
         setInput(e.target.value);
@@ -49,7 +44,7 @@ const EmployeeDirectory = ({employee, setEmployee}: empProps) => {
     return (
         <div className='flex justify-center items-center h-screen'>
             <HomePage employee={newEmployeeList} input={input} handleChange={handleChange} />
-            <FormSection addEmployee={addEmployee} employee={employee}/>
+            <FormSection/>
         </div>
     )
 }

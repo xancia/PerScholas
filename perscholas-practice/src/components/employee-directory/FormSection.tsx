@@ -1,16 +1,18 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 // FormSection.tsx
 import { useRef, useState } from "react"
-import { EmployeeType } from "./EmployeeListItem";
 import { randomImageGen } from "./util/util";
+import { useDispatch } from "react-redux";
+import { addEmployee } from "./store/employeeSlice";
+import { useSelector } from "react-redux";
 
 
-type FormSectionProps = {
-    addEmployee: (employee: EmployeeType) => void;
-    employee: EmployeeType
-};
 
-const FormSection = ({ addEmployee, employee }: FormSectionProps) => {
+
+const FormSection = () => {
     const [isFormShowing, setIsFormShowing] = useState(false)
+    const dispatch = useDispatch()
+    const employee = useSelector((state:any) => state.employee)
    
     type refType = HTMLInputElement | null
 
@@ -21,18 +23,15 @@ const FormSection = ({ addEmployee, employee }: FormSectionProps) => {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
         if (firstNameRef.current && lastNameRef.current && emailRef.current){
-        const newEmployee: EmployeeType = {
+        const newEmployee = {
             first_name: firstNameRef.current.value,
             last_name: lastNameRef.current.value,
             email: emailRef.current.value,
             id: crypto.randomUUID(),
             avatar: randomImageGen(),
             length: 0,
-            filter: function (): unknown {
-                throw new Error("Function not implemented.");
-            }
         };
-        addEmployee(newEmployee);
+        dispatch(addEmployee(newEmployee))
         console.log(employee)
     }
     }
