@@ -38,6 +38,8 @@ function App() {
       <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('BRONX')}>Bronx</button>
       <button className="border bg-blue-800 text-white border-gray-800 rounded-md px-2 p-1" onClick={() => setBorough('STATEN ISLAND')}>Staten Island</button>
       </div>
+
+      
       {data &&
 
       data.map((incident,index) => {
