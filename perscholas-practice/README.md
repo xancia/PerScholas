@@ -13,3 +13,8 @@ src/components/crypto-router-app
 # Employee Directory Lab/HW
 
 src/components/employee-directory
+
+
+# Stock router app
+
+src/components/stock-router-app
