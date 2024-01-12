@@ -6,10 +6,10 @@ const fruits = require('./models/fruits')
 
 const PORT = 5000
 
+// set up engine
 const jsxEngine = require('jsx-view-engine')
-
 app.set('view engine', 'jsx');
-app.engine('jsx', jsxEngine.createEngine());
+app.engine('jsx', jsxEngine());
 
 // root route
 app.get('/', (req,res) => {
@@ -23,7 +23,8 @@ app.get('/fruits', (req,res) => {
 
 //show route
 app.get('/fruits/:index', (req,res) => {
-    res.send(fruits[req.params.index])
+    // res.send(fruits[req.params.index])
+    res.render('Show')
 })
 
 app.listen(PORT, () => {
