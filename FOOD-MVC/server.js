@@ -14,11 +14,13 @@ app.engine('jsx', jsxEngine());
 
 // Import Router
 const fruitRoutes = require('./routes/fruitRoutes')
+const vegetableRoutes = require('./routes/vegetableRoutes')
 
 // middleware
 app.use(express.urlencoded({extended:true})); // format post request
 app.use(methodOverride('_method'))
 app.use('/fruits',fruitRoutes)
+app.use('/vegetables',vegetableRoutes)
 
 // root route
 app.get('/', (req,res) => {

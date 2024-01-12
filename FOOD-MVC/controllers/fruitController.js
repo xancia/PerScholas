@@ -1,18 +1,18 @@
 const fruits = require('../models/fruits')
 
 const fruitIndex = (req,res) => {
-    res.render('Index' , {
+    res.render('fruits/Index' , {
         fruits: fruits
     })
 }
 
 const fruitNew = (req,res) => {
-    res.render('New')
+    res.render('fruits/New')
 }
 
 
 const fruitShow = (req,res) => {
-    res.render('Show', {
+    res.render('fruits/Show', {
         fruits: fruits[req.params.index],
         index: req.params.index
     })
@@ -32,7 +32,7 @@ const fruitCreate = (req,res) => {
 
 
 const fruitEdit = (req,res) => {
-    res.render('Edit', {
+    res.render('fruits/Edit', {
         fruit: fruits[req.params.index],
         index: req.params.index
     })
