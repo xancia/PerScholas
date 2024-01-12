@@ -11,6 +11,9 @@ const jsxEngine = require('jsx-view-engine')
 app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());
 
+// middleware
+app.use(express.urlencoded({extended:false})); // format post request
+
 // root route
 app.get('/', (req,res) => {
     res.send('Hello World!')
@@ -35,6 +38,12 @@ app.get('/fruits/:index', (req,res) => {
     res.render('Show', {
         fruits: fruits[req.params.index]
     })
+})
+
+// create route
+app.post('/fruits', (req,res) => {
+    console.log(req.body)
+    res.send('data received')
 })
 
 app.listen(PORT, () => {
