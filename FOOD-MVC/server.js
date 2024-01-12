@@ -18,7 +18,10 @@ app.get('/', (req,res) => {
 
 // index route
 app.get('/fruits', (req,res) => {
-    res.send(fruits)
+    // res.send(fruits)
+    res.render('Index' , {
+        fruits: fruits
+    })
 })
 
 //show route
