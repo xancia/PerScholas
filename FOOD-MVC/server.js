@@ -24,6 +24,11 @@ app.get('/fruits', (req,res) => {
     })
 })
 
+// new route
+app.get('/fruits/new', (req,res) => {
+    res.render('New')
+})
+
 //show route
 app.get('/fruits/:index', (req,res) => {
     // res.send(fruits[req.params.index])
