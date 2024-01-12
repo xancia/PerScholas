@@ -1,18 +1,18 @@
 const vegetables = require('../models/vegetables')
 
 const vegetableIndex = (req,res) => {
-    res.render('vegetables/VegetableIndex' , {
+    res.render('vegetables/Index' , {
         vegetables: vegetables
     })
 }
 
 const vegetableNew = (req,res) => {
-    res.render('vegetables/VegetableNew')
+    res.render('vegetables/New')
 }
 
 
 const vegetableShow = (req,res) => {
-    res.render('vegetables/VegetableShow', {
+    res.render('vegetables/Show', {
         vegetables: vegetables[req.params.index],
         index: req.params.index
     })
@@ -32,7 +32,7 @@ const vegetableCreate = (req,res) => {
 
 
 const vegetableEdit = (req,res) => {
-    res.render('vegetables/VegetableEdit', {
+    res.render('vegetables/Edit', {
         vegetable: vegetables[req.params.index],
         index: req.params.index
     })
