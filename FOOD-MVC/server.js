@@ -1,4 +1,6 @@
 const express = require('express')
+
+// method override needed to fix html forms to allow update and delete
 const methodOverride = require('method-override')
 
 const app = express()
