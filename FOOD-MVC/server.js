@@ -26,7 +26,7 @@ app.use('/meats',meatRoutes)
 
 // root route
 app.get('/', (req,res) => {
-    res.send('Hello World!')
+    res.render('Home')
 })
 
 
