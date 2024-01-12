@@ -24,7 +24,9 @@ app.get('/fruits', (req,res) => {
 //show route
 app.get('/fruits/:index', (req,res) => {
     // res.send(fruits[req.params.index])
-    res.render('Show')
+    res.render('Show', {
+        fruits: fruits[req.params.index]
+    })
 })
 
 app.listen(PORT, () => {
