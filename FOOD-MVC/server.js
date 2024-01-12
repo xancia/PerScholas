@@ -1,4 +1,5 @@
 const express = require('express')
+const methodOverride = require('method-override')
 
 const app = express()
 
@@ -13,6 +14,7 @@ app.engine('jsx', jsxEngine());
 
 // middleware
 app.use(express.urlencoded({extended:true})); // format post request
+app.use(methodOverride('_method'))
 
 // root route
 app.get('/', (req,res) => {
@@ -58,6 +60,12 @@ app.get('/fruits/:index/edit', (req,res) => {
     res.render('Edit', {
         fruit: fruits[req.params.index]
     })
+})
+
+// destroy route
+app.delete('/fruits/:index', (req, res) => {
+    fruits.splice(req.params.index, 1)
+    res.redirect('/fruits')
 })
 
 app.listen(PORT, () => {

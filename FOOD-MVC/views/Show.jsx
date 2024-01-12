@@ -7,6 +7,11 @@ const Show = ({fruits, index}) => {
         <p>The {fruits.name} is {fruits.color}</p>
         <p>{fruits.readyToEat ? "It's ready to eat" : "It's not ready to eat..."}</p>
         <a href={`/fruits/${index}/edit`}><button>Edit</button></a>
+        <br />
+
+        <form action={`/fruits/${index}?_method=DELETE`} method='POST'>
+            <button>Delete</button>
+        </form>
     </div>
   )
 }
