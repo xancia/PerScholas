@@ -72,6 +72,7 @@ const fruitUpdate = async (req, res) => {
 const fruitSeed = async (req,res) => {
     //delete all data from collection, deleteMany will delete EVERYTHING
     //add seed data to database
+    //mainly for development testing, not used in production
 
     await Fruit.deleteMany()
     await Fruit.create(fruits) // create can add 1 document or add an array of documents just by passing it in
