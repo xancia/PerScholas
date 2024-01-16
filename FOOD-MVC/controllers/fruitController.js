@@ -23,8 +23,7 @@ const fruitNew = (req,res) => {
 const fruitShow = async (req,res) => {
     const data = await Fruit.findById(req.params.id)
     res.render('fruits/Show', {
-        fruits: data,
-        index: req.params.index
+        fruits: data
     })
 }
 
