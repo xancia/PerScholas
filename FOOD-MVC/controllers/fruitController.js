@@ -1,8 +1,11 @@
 const fruits = require('../models/fruits')
+const Fruit = require('../models/Fruit')
 
-const fruitIndex = (req,res) => {
+const fruitIndex = async (req,res) => {
+    const data = await Fruit.find()
+    console.log('data from mongo: ', data)
     res.render('fruits/Index' , {
-        fruits: fruits
+        fruits: data
     })
 }
 

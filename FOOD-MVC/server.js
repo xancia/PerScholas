@@ -1,8 +1,10 @@
+require('dotenv').config()
 const express = require('express')
 
 // method override needed to fix html forms to allow update and delete
 const methodOverride = require('method-override')
 
+const mongoConfig = require('./config')
 const app = express()
 
 const PORT = 5000
@@ -32,4 +34,5 @@ app.get('/', (req,res) => {
 
 app.listen(PORT, () => {
     console.log('Listening on port: ' + PORT)
+    mongoConfig()
 })
