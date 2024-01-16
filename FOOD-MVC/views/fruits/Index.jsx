@@ -10,7 +10,7 @@ const Index = ({ fruits }) => {
       <ul>
         {fruits.map((fruit, index) => (
           <li key={index}>
-            The <a href={`/fruits/${index}`}>{fruit.name} </a>
+            The <a href={`/fruits/${fruit._id}`}>{fruit.name} </a>
             is {fruit.color}
             <br />
             {fruit.readyToEat
