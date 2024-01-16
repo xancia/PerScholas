@@ -11,7 +11,7 @@ router.get('/', fruitController.fruitIndex)
 router.get('/new', fruitController.fruitNew)
 
 //show route
-router.get('/:index', fruitController.fruitShow)
+router.get('/:id', fruitController.fruitShow)
 
 // create route
 router.post('/', fruitController.fruitCreate)

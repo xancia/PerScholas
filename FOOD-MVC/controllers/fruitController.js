@@ -20,9 +20,10 @@ const fruitNew = (req,res) => {
 }
 
 
-const fruitShow = (req,res) => {
+const fruitShow = async (req,res) => {
+    const data = await Fruit.findById(req.params.id)
     res.render('fruits/Show', {
-        fruits: fruits[req.params.index],
+        fruits: data,
         index: req.params.index
     })
 }

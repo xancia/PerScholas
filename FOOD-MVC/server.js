@@ -1,3 +1,4 @@
+process.env.NODE_NO_WARNINGS = 1;
 require('dotenv').config()
 const express = require('express')
 
