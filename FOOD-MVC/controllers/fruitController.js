@@ -49,25 +49,25 @@ const fruitCreate = async (req,res) => {
 const fruitEdit = async (req,res) => {
     const data = await Fruit.findById(req.params.id)
     res.render('fruits/Edit', {
-        fruit: data,
-        index: req.params.index
+        fruit: data
     })
 }
 
 
-const fruitDelete = (req, res) => {
-    fruits.splice(req.params.index, 1)
+const fruitDelete = async (req, res) => {
+    await Fruit.findByIdAndDelete(req.params.id)
     res.redirect('/fruits')
 }
 
 
-const fruitUpdate = (req, res) => {
+const fruitUpdate = async (req, res) => {
     if (req.body.readyToEat === 'on') {
         req.body.readyToEat = true
     } else {
         req.body.readyToEat = false
     }
-    fruits[req.params.index] = req.body
+    // takes two ars, id and updates
+    await Fruit.findByIdAndUpdate(req.params.id, req.body)
     res.redirect(`/fruits/${req.params.id}`)
 }
 

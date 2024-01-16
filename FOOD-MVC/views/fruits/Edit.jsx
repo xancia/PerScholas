@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Edit = ({fruit , index}) => {
+const Edit = ({fruit}) => {
   return (
     <div>
         <h1>Edit Fruit Page</h1>
