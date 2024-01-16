@@ -14,17 +14,18 @@ app.set('view engine', 'jsx');
 app.engine('jsx', jsxEngine());
 
 // Routers
+const captainRoutes = require('./routes/captainRoutes')
 
 
 //Middleware
 app.use(express.urlencoded({extended:true})); // format post request
 app.use(methodOverride('_method'))
-
+app.use('/logs',captainRoutes)
 
 
 // root route
 app.get('/', (req,res) => {
-    res.render('Index')
+    res.send('<a href="/logs">Go to /logs</a>')
 })
 
 

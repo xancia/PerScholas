@@ -1,8 +1,25 @@
 import React from 'react'
 
-const Index = () => {
+const Index = ({logs}) => {
   return (
-    <div>Index</div>
+    <div>
+      <h1>Index Page</h1>
+      <nav>
+        <a href="">Add New Log</a>
+      </nav>
+      <ul>
+        {logs.map((log, index) => (
+          <li key={index}>
+            title: <a href={`/logs/${log._id}`}>{log.title} </a>
+            entry: {log.entry}
+            <br />
+            {log.shipIsBroken
+              ? "Ship is broken"
+              : "Ship is not broken"}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
