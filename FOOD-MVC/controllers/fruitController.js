@@ -2,11 +2,17 @@ const fruits = require('../models/fruits')
 const Fruit = require('../models/Fruit')
 
 const fruitIndex = async (req,res) => {
-    const data = await Fruit.find()
-    console.log('data from mongo: ', data)
-    res.render('fruits/Index' , {
-        fruits: data
-    })
+    try{
+        const data = await Fruit.find()
+        console.log('data from mongo: ', data)
+        res.render('fruits/Index' , {
+            fruits: data
+        })
+    } catch(err){
+        res.send('There is an error')
+        console.log('error : ', err)
+    }
+    
 }
 
 const fruitNew = (req,res) => {
@@ -22,11 +28,17 @@ const fruitShow = (req,res) => {
 }
 
 
-const fruitCreate = (req,res) => {
+const fruitCreate = async (req,res) => {
     if (req.body.readyToEat === 'on') {
         req.body.readyToEat = true
     } else {
         req.body.readyToEat = false
+    }
+    try{
+        const result = await Fruit.create(req.body)
+        console.log('data saved: ',result)
+    }catch(err){
+        console.log('error : ', err)
     }
     fruits.push(req.body)
     console.log(fruits)
