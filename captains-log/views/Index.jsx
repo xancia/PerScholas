@@ -5,7 +5,9 @@ const Index = ({logs}) => {
     <div>
       <h1>Index Page</h1>
       <nav>
-        <a href="">Add New Log</a>
+        <a href="/logs/new">Add New Log</a>
+        <br/> <br/>
+        <a href="/logs/clear">Clear All Logs</a>
       </nav>
       <ul>
         {logs.map((log, index) => (
