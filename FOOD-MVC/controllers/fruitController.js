@@ -23,7 +23,7 @@ const fruitNew = (req,res) => {
 const fruitShow = async (req,res) => {
     const data = await Fruit.findById(req.params.id)
     res.render('fruits/Show', {
-        fruits: data
+        fruit: data
     })
 }
 
@@ -46,9 +46,10 @@ const fruitCreate = async (req,res) => {
 }
 
 
-const fruitEdit = (req,res) => {
+const fruitEdit = async (req,res) => {
+    const data = await Fruit.findById(req.params.id)
     res.render('fruits/Edit', {
-        fruit: fruits[req.params.index],
+        fruit: data,
         index: req.params.index
     })
 }
@@ -67,7 +68,7 @@ const fruitUpdate = (req, res) => {
         req.body.readyToEat = false
     }
     fruits[req.params.index] = req.body
-    res.redirect(`/fruits/${req.params.index}`)
+    res.redirect(`/fruits/${req.params.id}`)
 }
 
 module.exports = {

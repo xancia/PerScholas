@@ -1,16 +1,16 @@
 import React from 'react'
 
-const Show = ({fruits, index}) => {
+const Show = ({fruit, index}) => {
   return (
     <div>
         <h2><a href="/fruits">Back to Index</a></h2>
         <h1>Show Page</h1>
-        <p>The {fruits.name} is {fruits.color}</p>
-        <p>{fruits.readyToEat ? "It's ready to eat" : "It's not ready to eat..."}</p>
-        <a href={`/fruits/${index}/edit`}><button>Edit</button></a>
+        <p>The {fruit.name} is {fruit.color}</p>
+        <p>{fruit.readyToEat ? "It's ready to eat" : "It's not ready to eat..."}</p>
+        <a href={`/fruits/${fruit._id}/edit`}><button>Edit</button></a>
         <br />
 
-        <form action={`/fruits/${index}?_method=DELETE`} method='POST'>
+        <form action={`/fruits/${fruit._id}?_method=DELETE`} method='POST'>
             <button>Delete</button>
         </form>
     </div>
