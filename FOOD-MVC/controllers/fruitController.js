@@ -40,8 +40,6 @@ const fruitCreate = async (req,res) => {
     }catch(err){
         console.log('error : ', err)
     }
-    fruits.push(req.body)
-    console.log(fruits)
     res.redirect('/fruits')
 }
 
@@ -71,6 +69,15 @@ const fruitUpdate = async (req, res) => {
     res.redirect(`/fruits/${req.params.id}`)
 }
 
+const fruitSeed = async (req,res) => {
+    //delete all data from collection, deleteMany will delete EVERYTHING
+    //add seed data to database
+
+    await Fruit.deleteMany()
+    await Fruit.create(fruits) // create can add 1 document or add an array of documents just by passing it in
+    res.redirect('/fruits')
+}
+
 module.exports = {
     fruitIndex,
     fruitNew,
@@ -78,5 +85,6 @@ module.exports = {
     fruitCreate,
     fruitEdit,
     fruitDelete,
-    fruitUpdate
+    fruitUpdate,
+    fruitSeed
 }

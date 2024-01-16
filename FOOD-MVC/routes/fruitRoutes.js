@@ -7,6 +7,9 @@ const fruitController = require('../controllers/fruitController')
 // index route
 router.get('/', fruitController.fruitIndex)
 
+// seed route
+router.get('/seed',fruitController.fruitSeed)
+
 // new route
 router.get('/new', fruitController.fruitNew)
 
