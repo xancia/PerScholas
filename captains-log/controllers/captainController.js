@@ -41,10 +41,43 @@ const logClear = async (req,res) => {
     res.redirect('/logs')
 }
 
+const logShow = async (req,res) => {
+    const data = await Log.findById(req.params.id)
+    res.render('Show', {
+        log: data
+    })
+}
+
+const logEdit = async (req,res) => {
+    const data = await Log.findById(req.params.id)
+    res.render('Edit', {
+        log: data
+    })
+}
+
+const logUpdate = async (req, res) => {
+    if (req.body.shipIsBroken === 'on') {
+        req.body.shipIsBroken = true
+    } else {
+        req.body.shipIsBroken = false
+    }
+    await Log.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect(`/logs/${req.params.id}`)
+}
+
+const logDelete = async (req,res) => {
+    await Log.findByIdAndDelete(req.params.id)
+    res.redirect(`/logs`)
+}
+
 
 module.exports = {
     logIndex,
     logNew,
     logCreate,
-    logClear
+    logClear,
+    logShow,
+    logEdit,
+    logUpdate,
+    logDelete
 }

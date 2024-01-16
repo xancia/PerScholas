@@ -12,12 +12,7 @@ const Index = ({logs}) => {
       <ul>
         {logs.map((log, index) => (
           <li key={index}>
-            title: <a href={`/logs/${log._id}`}>{log.title} </a>
-            entry: {log.entry}
-            <br />
-            {log.shipIsBroken
-              ? "Ship is broken"
-              : "Ship is not broken"}
+            <h2><a href={`/logs/${log._id}`}>{log.title} </a></h2>
           </li>
         ))}
       </ul>
