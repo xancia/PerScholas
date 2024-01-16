@@ -10,6 +10,9 @@ router.get('/', fruitController.fruitIndex)
 // seed route
 router.get('/seed',fruitController.fruitSeed)
 
+// delete all route
+router.get('/clear', fruitController.fruitClear)
+
 // new route
 router.get('/new', fruitController.fruitNew)
 

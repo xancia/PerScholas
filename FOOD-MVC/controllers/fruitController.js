@@ -79,6 +79,11 @@ const fruitSeed = async (req,res) => {
     res.redirect('/fruits')
 }
 
+const fruitClear = async (req,res) => {
+    await Fruit.deleteMany()
+    res.redirect('/fruits')
+}
+
 module.exports = {
     fruitIndex,
     fruitNew,
@@ -87,5 +92,6 @@ module.exports = {
     fruitEdit,
     fruitDelete,
     fruitUpdate,
-    fruitSeed
+    fruitSeed,
+    fruitClear
 }
