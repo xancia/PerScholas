@@ -33,7 +33,7 @@ useEffect(() => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home username={user.username}/>} />
         <Route path="/register" element={<Register setUser={setUser}/>} />
         <Route path="/login" element={<Login setUser={setUser}/>} />
         <Route path="/profile" element={<Profile username={user.username} email={user.email}/>} />
