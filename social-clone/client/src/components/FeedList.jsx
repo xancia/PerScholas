@@ -16,6 +16,16 @@ const FeedList = () => {
                     timestamp: '1/23/2024'
                 }
             ]
+        },
+        {
+            img: '',
+            name: 'Bob',
+            timestamp: '1/22/2024',
+            body: 'Testing number 2',
+            likes: 1,
+            comments: [
+                
+            ]
         }
     ]
 
