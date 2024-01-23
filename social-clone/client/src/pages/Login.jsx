@@ -50,7 +50,7 @@ function Login ({setUser}) {
 
         } catch(err) {
             console.log(err.response.data.error)
-            alert(err.response.data.error)
+            alert('Wrong Username or Password')
         }
     }
 
@@ -69,29 +69,29 @@ function Login ({setUser}) {
             </div>
             
             
-            Email address:
-            <br/>
-            <input type='text' name = 'email' className = 'border-2 rounded-md w-full' onChange={handleChange}/>
-            <br/><br/>
-            Password:
-            <br/>
-            <input type = 'text'  className = 'border-2 rounded-md w-full' onChange={handleChange}/>
-            <br/> <br/>
-            {/* <div className = 'mx-1'>
-              
-                User <input type = 'radio' name = 'user' className = 'mx-1' />
-              
-                Admin <input type = 'radio' name = 'admin' className = 'mx-1'/>
-              
-            </div> */}
-            <br/>
-            <button className = ' w-40 border-2 rounded-md' > Login </button>
-            <br/> <br/>
-            <div className = ''>
-              <p>Don't have an account?</p>
-              <a href = '/register' className = 'underline' > Register Now </a>
-              
-            </div>
+            <label htmlFor="username">Username:</label>
+                <br />
+                <input 
+                    type="text" 
+                    id="username"
+                    name="username"
+                    onChange={handleChange}
+                    value={form.username}
+                    className = 'border-2 rounded-md w-full'
+                />
+                <br /><br />
+                <label htmlFor="password">Password:</label>
+                <br />
+                <input 
+                    type="password" 
+                    id="password"
+                    name="password"
+                    onChange={handleChange}
+                    value={form.password}
+                    className = 'border-2 rounded-md w-full'
+                />
+                <br /><br />
+                <button className = ' w-40 border-2 rounded-md'>Submit</button>
             </div>
           </form>
         </div>
@@ -100,3 +100,8 @@ function Login ({setUser}) {
     )
   }
   export default Login
+
+
+  // className = 'border-2 rounded-md w-full'
+
+  // className = ' w-40 border-2 rounded-md'

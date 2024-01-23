@@ -19,7 +19,7 @@ const Profile = ({ username, email }) => {
         />
         <div className="flex flex-col max-w-screen-lg mx-auto relative bg-white">
         <ProfileHeader />
-        <ProfileBody />
+        <ProfileBody username={username} email={email}/>
         </div>
     </div>
   </div>
