@@ -23,9 +23,9 @@ const Post = ({post}) => {
             </div>
       </div>
       <div className="bg-slate-300">
-        <div className="p-4">
-            <img src="" alt="" />
-            <input className="bg-slate-300 border-b-[1px] border-black w-full" placeholder="Comment..."/>
+        <div className="flex items-center p-4">
+            <img src="" alt="" className="w-10 bg-white h-10"/>
+            <input className="bg-slate-300 border-b-[1px] border-black w-full ml-4" placeholder="Comment..."/>
         </div>
         <div className="flex">
             {post.comments.map((comment, index) => (
