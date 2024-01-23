@@ -1,40 +1,31 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import FeedList from "./FeedList"
 import NewPost from "./NewPost"
 import Container from "./util/Container"
+import axios from "axios"
 
-let postSeed = [
-    {
-        img: 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600',
-        name: 'Bob',
-        timestamp: '1/22/2024',
-        body: 'This is a test',
-        likes: 3,
-        comments: [
-            {
-                name: 'John',
-                img: '',
-                body: 'testing',
-                timestamp: '1/23/2024'
-            }
-        ]
-    },
-    {
-        img: '',
-        name: 'Bob',
-        timestamp: '1/22/2024',
-        body: 'Testing number 2',
-        likes: 1,
-        comments: [
-            
-        ]
-    }
-]
+
 
 const Feed = ({username}) => {
-    const [post, setPost] = useState(postSeed)
+    const [post, setPost] = useState([])
+    console.log(post)
+    
+    useEffect(() => {
 
+        const getData = async () => {
+          try {
+            const response = await axios.get('/api/posts')
+            console.log(response)
+            setPost(response.data)
+          } catch(err) {
+            console.error(err)
+          }
+        }
+    
+        getData()
+    
+      }, [])
     
   return (
     <div>

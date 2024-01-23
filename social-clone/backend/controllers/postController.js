@@ -4,7 +4,7 @@ const Comment = require('../models/commentModel')
 
 module.exports.index = async (req, res) => {
     const posts = await Posts.find().sort({ createdAt: -1 })
-    res.render('posts/Index', { posts })
+    res.status(200).json(posts)
 }
 
 module.exports.new = async (req, res) => {

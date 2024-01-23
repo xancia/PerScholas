@@ -16,7 +16,7 @@ const Post = ({ post }) => {
               className="w-10 bg-white h-10 ml-4 rounded-full"
             />
             <div className="flex flex-col pl-4">
-              <p>{post.name}</p>
+              <p>{post.user}</p>
               <p className="text-sm text-gray-400">{post.timestamp}</p>
             </div>
           </div>

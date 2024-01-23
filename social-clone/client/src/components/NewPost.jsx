@@ -17,9 +17,12 @@ const NewPost = ({username, setPost, post}) => {
                 body: input,
                 user: username
             }
-            const response = await axios.post('/posts', postData)
+            console.log(postData)
+            const response = await axios.post('/api/posts', postData)
+            console.log(response.data)
             setPost([...post, response.data])
             setInput('')
+            
         } catch (error) {
             console.log(error)
         }
@@ -34,7 +37,7 @@ const NewPost = ({username, setPost, post}) => {
             <div className="bg-green-200 p-4">
                 <div className="flex items-center">
                     <img src="" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
-                    <p className="pl-4">Name</p>
+                    <p className="pl-4">{username}</p>
                 </div>
             </div>
             <div className="h-36 w-full p-8" >

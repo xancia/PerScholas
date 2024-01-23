@@ -27,7 +27,7 @@ app.use(express.json())
 
 //Login/Register Links
 app.use('/auth', authRoutes)
-app.use('/posts', postRoutes)
+app.use('/api/posts', postRoutes)
 app.use('/comments', commentRoutes)
 
 // Profile Link
