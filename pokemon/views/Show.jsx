@@ -2,8 +2,6 @@ import React from "react";
 
 const regEx = /(\b[a-z](?!\s))/g;
 
-
-
 export default function Show({ pokemon }) {
   return (
     <div>

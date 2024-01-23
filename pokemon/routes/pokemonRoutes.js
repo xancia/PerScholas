@@ -5,8 +5,6 @@ const router = express.Router();
 
 const pokemonController = require('../controllers/pokemonController')
 
-
-
 // index route
 router.get('/', pokemonController.pokemonIndex)
 
