@@ -3,7 +3,7 @@ import Post from "./Post"
 const FeedList = () => {
     let post = [
         {
-            img: '',
+            img: 'https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600',
             name: 'Bob',
             timestamp: '1/22/2024',
             body: 'This is a test',
