@@ -8,7 +8,7 @@ const Post = ({post}) => {
       <div className="border-slate-400 border-b-2">
       <div className="bg-slate-300 p-4">
                 <div className="flex items-center">
-                    <img src="" alt="" className="w-10 bg-white h-10 ml-4"/>
+                    <img src="" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
                     <p className="pl-4">Name</p>
                 </div>
             </div>
@@ -24,13 +24,13 @@ const Post = ({post}) => {
       </div>
       <div className="bg-slate-300">
         <div className="flex items-center p-4">
-            <img src="" alt="" className="w-10 bg-white h-10"/>
+            <img src="" alt="" className="w-10 bg-white h-10 rounded-full"/>
             <input className="bg-slate-300 border-b-[1px] border-black w-full ml-4" placeholder="Comment..."/>
         </div>
         <div className="flex">
             {post.comments.map((comment, index) => (
                 <div className="w-full flex items-center" key={index}>
-                    <img src="" alt="" className="w-10 bg-white h-10 ml-4"/>
+                    <img src="" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
                     <div className="flex flex-col m-4 bg-white w-full">
                         <div className="p-2">
                         <p className="text-purple-600">{comment.name}</p>

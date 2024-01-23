@@ -6,7 +6,7 @@ const NewPost = () => {
         <div className="flex flex-col mx-8 my-4 bg-white">
             <div className="bg-green-200 p-4">
                 <div className="flex items-center">
-                    <img src="" alt="" className="w-10 bg-white h-10 ml-4"/>
+                    <img src="" alt="" className="w-10 bg-white h-10 ml-4 rounded-full"/>
                     <p className="pl-4">Name</p>
                 </div>
             </div>
