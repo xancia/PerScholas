@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 
 import NavBar from "../components/NavBar"
 import ProfileBody from "../components/ProfileBody"
 import ProfileHeader from "../components/ProfileHeader"
 
 
-const Profile = () => {
+const Profile = ({ username, email }) => {
   return (
     <div>
         <NavBar />

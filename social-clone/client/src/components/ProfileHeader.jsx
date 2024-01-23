@@ -5,7 +5,7 @@ const ProfileHeader = () => {
     <div className="flex items-center justify-between p-4 bg-pink-200 ">
     <div className="flex items-center">
       <FaPeopleArrows className="connect-icon text-2xl mr-2" />
-      <a href="/connect" className="text-lg font-semibold">
+      <a href="/profile" className="text-lg font-semibold">
         Connect
       </a>
     </div>
@@ -14,7 +14,7 @@ const ProfileHeader = () => {
     </div>
     <div className="flex items-center">
       <FaCommentDots className="msg-icon text-2xl mr-2" />
-      <a href="/message" className="text-lg font-semibold">
+      <a href="/profile" className="text-lg font-semibold">
         Message
       </a>
     </div>
